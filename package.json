@@ -1,0 +1,26 @@
+{
+  "name": "chatbot-coke",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonicoke/ChatBot-Coke.git"
+  },
+  "author": "Jonathan Giacomini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonicoke/ChatBot-Coke/issues"
+  },
+  "homepage": "https://github.com/jonicoke/ChatBot-Coke#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}

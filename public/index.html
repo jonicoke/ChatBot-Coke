@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatBot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <main>
+    <div class="container">
+        <h1>ChatBot sobre mí</h1>
+      <div id="chat"></div>
+      <aside id="optionsBar" class="options-bar">
+        <h1>Preguntas rápidas</h1>
+        <div class="sec-options">
+          <p class="text-options " onclick="sendQuickQuestion('¿Quién eres?')">¿Quién eres?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿Con qué lenguajes trabajas?')">¿Con qué lenguajes trabajas?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿A qué te dedicas?')">¿A qué te dedicas?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿Cuál es tu enfoque?')">¿Cuál es tu enfoque?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿Cómo contacto contigo?')">¿Cómo contacto contigo?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿Cuáles son tus conocimientos?')">¿Cuáles son tus conocimientos?</p>
+          <p class="text-options " onclick="sendQuickQuestion('¿Cuáles son tus objetivos?')">¿Cuáles son tus objetivos?</p>
+          
+        </div>
+      </aside>
+      <div class="footer-container">
+        <input id="userInput" placeholder="Haz tu consulta sobre mí." />
+        <button class="btn" onclick="sendMessage()">Enviar</button>
+        <button class="btn options" onclick="upOptions()">></button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="links-footer">
+      <a class="link" target="_blank" href="https://github.com/jonicoke/ChatBot-Coke">Repositorio</a>
+      <a class="link" target="_blank" href="https://github.com/jonicoke">GitHub</a>
+      <a class="link" target="_blank" href="https://www.linkedin.com/in/jonathan-giacomini/">Linkedin</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
