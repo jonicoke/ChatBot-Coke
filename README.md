@@ -1,35 +1,52 @@
-# Creación de un chatbot personal
- hecho con Node.js, JavaScript y MongoDB Atlas, que está pensado para interactuar y responder preguntas acerca de mí.
- El propósito fundamental es brindar una experiencia sencilla y dinámica para que los visitantes puedan conocerme mejor a través de una interfaz de chat.
+# 🤖 Chatbot Personal 
 
- Frontend: JavaScript, CSS y HTML
+# 📌 Descripción
 
- Backend: Express con Node.js
+Este proyecto consiste en la creación de un chatbot personal desarrollado con Node.js, JavaScript y MongoDB Atlas, diseñado para interactuar con los usuarios y responder preguntas relacionadas con mi perfil profesional.
 
- Base de datos: Atlas de MongoDB
+El objetivo principal es brindar una experiencia simple, dinámica e intuitiva, permitiendo que los visitantes conozcan información sobre mí a través de una interfaz de chat estilo WhatsApp.
 
- Manejo de variables de entorno: dotenv
+# 🛠️ Tecnologías utilizadas
+Frontend: HTML, CSS, JavaScript.
+Backend: Node.js, Express-
+Base de datos: MongoDB Atlas
+Configuración: dotenv (manejo de variables de entorno)
 
- # Operación
+# ⚙️ Funcionamiento
 
- El usuario manda un mensaje a través de la interfaz del chat.
+El usuario envía un mensaje a través de la interfaz del chat.
 
- El servidor utiliza coincidencias flexibles (regex) para buscar una respuesta predefinida en la base de datos de MongoDB Atlas.
+El servidor procesa el mensaje y realiza una búsqueda flexible utilizando expresiones regulares (regex) en la base de datos de MongoDB Atlas.
 
- Si se encuentra una respuesta, el bot la presenta en la pantalla.
+Si se encuentra una pregunta coincidente, el chatbot devuelve la respuesta correspondiente.
 
- Si no se encuentra, devuelve un mensaje predeterminado invitando a ponerse en contacto por correo electrónico.
+Si no hay coincidencias, el sistema responde con un mensaje predeterminado invitando a contactar por correo electrónico.
 
-# Estructura 
+# 📂 Estructura del proyecto
 
- public/script.js → Regula la interacción del usuario, el envío de mensajes y las animaciones en la interfaz.
+public/script.js ---> Maneja la interacción del usuario y el envío de mensajes
+server.js ---> Configuración del servidor Express y conexión a MongoDB
+models/Response.js ---> Modelo de preguntas y respuestas almacenadas en la base de datos
 
- server.js → Se encarga de gestionar las rutas, establecer la conexión con MongoDB y configurar el servidor Express.
+# 🎯 Propósito del proyecto
 
- models/Response.js → Establece la estructura de las preguntas y respuestas almacenadas en la base de datos.
+Este chatbot forma parte de mi portafolio personal y tiene como objetivo demostrar mis conocimientos en desarrollo full stack, especialmente en:
 
- # Propósito
+* Integración entre frontend y backend
+* Consumo de datos desde una base de datos NoSQL
+* Manejo de rutas y lógica del servidor
+* Organización y estructura de un proyecto web
 
- Este chatbot es parte de mi portafolio personal y tiene como objetivo demostrar mis capacidades en desarrollo full stack, particularmente en lo que se refiere a la integración entre el frontend, el backend y la base de datos.
+# 🚧 Estado del proyecto
 
+✅ Funcional
+🔧 En mejora continua (nuevas preguntas, respuestas y ajustes de UX)
+
+# 🧠 Nota
+
+El chatbot no almacena historial de conversaciones.
+Las respuestas se basan exclusivamente en preguntas predefinidas guardadas en la base de datos.
+
+
+Imagen de la próxima versión del chatbot:
  <img width="1346" height="639" alt="image" src="https://github.com/user-attachments/assets/55a8d95f-c988-41f8-b448-675fac9e8766" />
