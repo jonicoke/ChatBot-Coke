@@ -25,7 +25,9 @@ Si no hay coincidencias, el sistema responde con un mensaje predeterminado invit
 # 📂 Estructura del proyecto
 
 public/script.js ---> Maneja la interacción del usuario y el envío de mensajes
+
 server.js ---> Configuración del servidor Express y conexión a MongoDB
+
 models/Response.js ---> Modelo de preguntas y respuestas almacenadas en la base de datos
 
 # 🎯 Propósito del proyecto
