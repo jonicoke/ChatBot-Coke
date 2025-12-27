@@ -17,8 +17,8 @@ mongoose.connect(process.env.MONGODB_URI)
 app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
-    const userMessage = normalizeText(message);
-    const escapedMessage = escapeRegex(userMessage);
+ 
+    const escapedMessage = escapeRegex(message);
 
     const found = await Response.findOne({
       question: { $regex: new RegExp(escapedMessage, "i") }
@@ -42,12 +42,4 @@ app.listen(PORT, () =>
 // Función para escapar caracteres especiales en expresiones regulares
 function escapeRegex(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-// Función para normalizar texto (eliminar tildes y convertir a minúsculas)
-function normalizeText(text) {
-  return text
-    .normalize("NFD")              // separa letras y tildes
-    .replace(/[\u0300-\u036f]/g, "") // elimina tildes
-    .toLowerCase()
-    .trim();
 }
