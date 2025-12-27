@@ -31,3 +31,5 @@
  # Propósito
 
  Este chatbot es parte de mi portafolio personal y tiene como objetivo demostrar mis capacidades en desarrollo full stack, particularmente en lo que se refiere a la integración entre el frontend, el backend y la base de datos.
+
+ <img width="1346" height="639" alt="image" src="https://github.com/user-attachments/assets/55a8d95f-c988-41f8-b448-675fac9e8766" />
