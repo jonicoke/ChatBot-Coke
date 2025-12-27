@@ -42,11 +42,13 @@ Este chatbot forma parte de mi portafolio personal y tiene como objetivo demostr
 # 🚧 Estado del proyecto
 
 ✅ Funcional
+
 🔧 En mejora continua (nuevas preguntas, respuestas y ajustes de UX)
 
 # 🧠 Nota
 
 El chatbot no almacena historial de conversaciones.
+
 Las respuestas se basan exclusivamente en preguntas predefinidas guardadas en la base de datos.
 
 
