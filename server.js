@@ -15,19 +15,39 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.error("❌ Error al conectar:", err));
 
 app.post("/api/chat", async (req, res) => {
-  const { message } = req.body;
+  try {
+    const { message } = req.body;
+    const userMessage = normalizeText(message);
+    const escapedMessage = escapeRegex(userMessage);
 
-  const found = await Response.findOne({
-    question: { $regex: new RegExp(message, "i") }
-  });
-
-  if (found) {
-    res.json({ reply: found.answer });
-  } else {
-    res.json({ reply: "Si tenés alguna duda específica contacta conmigo: cokejonathang@gmail.com." });
+    const found = await Response.findOne({
+      question: { $regex: new RegExp(escapedMessage, "i") }
+    });
+  
+    if (found) {
+      res.json({ reply: found.answer });
+    } else {
+      res.json({ reply: "Si tenés alguna duda específica contacta conmigo: cokejonathang@gmail.com." });
+    }
+  } catch (error) {
+    console.error("Error en /api/chat:", error);
+    res.status(500).json({ reply: "Lo siento, hubo un error al procesar tu mensaje." });
   }
 });
 
 app.listen(PORT, () =>
   console.log(`Corriendo en: http://localhost:${PORT}`)
 );
+
+// Función para escapar caracteres especiales en expresiones regulares
+function escapeRegex(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+// Función para normalizar texto (eliminar tildes y convertir a minúsculas)
+function normalizeText(text) {
+  return text
+    .normalize("NFD")              // separa letras y tildes
+    .replace(/[\u0300-\u036f]/g, "") // elimina tildes
+    .toLowerCase()
+    .trim();
+}

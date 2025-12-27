@@ -1,58 +1,60 @@
-
 async function sendMessage() {
   const input = document.getElementById("userInput");
   const message = input.value.trim();
 
   if (!message) return;
 
-  const res = await fetch("/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message }),
-  });
-
-  const data = await res.json();
-
-  const chat = document.getElementById("chat");
-  chat.innerHTML += `<p><b>Tú:</b> ${message}</p>`;
-  chat.innerHTML += `<p><b>Bot Coke:</b> ${data.reply}</p>`;
-
+  appendMessage(message, 'user');
   input.value = "";
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
+
+    const data = await res.json();
+
+    appendMessage(data.reply, 'bot');
+
+  } catch (error) {
+    console.error("Error sending message:", error);
+    appendMessage("Lo siento, hubo un error al procesar tu mensaje.", 'bot');
+  }
+
+}
+
+// Función para agregar mensajes al chat
+function appendMessage(text, sender) {
+  const chat = document.getElementById("chat");
+
+  const messageDiv = document.createElement('div');
+  messageDiv.classList.add('message', sender);
+
+  const bubbleDiv = document.createElement('div');
+  bubbleDiv.classList.add('bubble');
+  if (sender === 'user') {
+    bubbleDiv.innerText = text;
+  } else {
+    bubbleDiv.innerHTML = text;
+  }
+
+  messageDiv.appendChild(bubbleDiv);
+  chat.appendChild(messageDiv);
+
   chat.scrollTop = chat.scrollHeight;
 }
 
-document.getElementById("userInput").addEventListener("keypress", function(e) {
+// Código para poder enviar el mensaje al presionar Enter
+document.getElementById("userInput").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     sendMessage();
   }
 });
-
-// Up Options
-
-const optionsButton = document.getElementsByClassName('options')[0];
-const optionsBar = document.getElementById('optionsBar');
-
-function upOptions() {
-  optionsBar.classList.toggle('open');
-  optionsButton.classList.toggle('open');
-}
-
+// Función para enviar preguntas rápidas
 function sendQuickQuestion(question) {
   const input = document.getElementById('userInput');
   input.value = question;
-  upOptions();
+  input.focus();
 }
-
-// --- Scroll horizontal para la sección de preguntas rápidas.
-document.addEventListener("DOMContentLoaded", () => {
-  const optionsBar = document.querySelector(".sec-options");
-  if (optionsBar) {
-    optionsBar.addEventListener("wheel", (e) => {
-      // Sirve solamente cuando la barra está visible.
-      if (optionsBar.closest(".options-bar.open")) {
-        e.preventDefault();
-        optionsBar.scrollLeft += e.deltaY * 1.2
-      }
-    });
-  }
-});
