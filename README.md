@@ -52,5 +52,4 @@ El chatbot no almacena historial de conversaciones.
 Las respuestas se basan exclusivamente en preguntas predefinidas guardadas en la base de datos.
 
 
-Imagen de la próxima versión del chatbot:
  <img width="1346" height="639" alt="image" src="https://github.com/user-attachments/assets/55a8d95f-c988-41f8-b448-675fac9e8766" />
