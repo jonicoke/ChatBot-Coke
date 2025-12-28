@@ -57,4 +57,19 @@ function sendQuickQuestion(question) {
   const input = document.getElementById('userInput');
   input.value = question;
   input.focus();
+  // Cerrar sidebar en mobile al seleccionar
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.remove('show-sidebar');
 }
+
+// Toggle Sidebar Mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebar = document.querySelector('.sidebar');
+
+  if (menuBtn && sidebar) {
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('show-sidebar');
+    });
+  }
+});

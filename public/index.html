@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
   <div class="app-container">
     <aside class="sidebar">
       <div class="quick-questions">
         <p class="section-title">Preguntas rápidas</p>
         <button class="suggestion-btn" onclick="sendQuickQuestion('¿Quién eres?')">¿Quién eres?</button>
         <button class="suggestion-btn" onclick="sendQuickQuestion('¿A qué te dedicas?')">¿A qué te dedicas?</button>
-        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Con qué lenguajes trabajas?')">¿Con qué lenguajes trabajas?</button>
-        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cuáles son tus conocimientos?')">¿Cuáles son tus conocimientos?</button>
-        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Qué proyectos realizaste?')">¿Qué proyectos realizaste?</button>
+        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Con qué lenguajes trabajas?')">¿Con qué lenguajes
+          trabajas?</button>
+        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cuáles son tus conocimientos?')">¿Cuáles son tus
+          conocimientos?</button>
+        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Qué proyectos realizaste?')">¿Qué proyectos
+          realizaste?</button>
         <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cuál es tu enfoque?')">¿Cuál es tu enfoque?</button>
-        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cuáles son tus objetivos?')">¿Cuáles son tus objetivos?</button>
-        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cómo contacto contigo?')">¿Cómo contacto contigo?</button>
+        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cuáles son tus objetivos?')">¿Cuáles son tus
+          objetivos?</button>
+        <button class="suggestion-btn" onclick="sendQuickQuestion('¿Cómo contacto contigo?')">¿Cómo contacto
+          contigo?</button>
       </div>
-      
+
       <div class="sidebar-footer">
         <div class="social-links">
           <a href="https://github.com/jonicoke" target="_blank">GitHub</a>
@@ -40,22 +47,34 @@
           <h1>@Coke Bot</h1>
           <span class="status-dot"></span> <small>En línea</small>
         </div>
+        <button id="menu-btn" class="menu-btn" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </header>
 
       <div id="chat" class="messages-container">
         <div class="message bot">
-            <div class="bubble">
-                ¡Hola! Soy el asistente virtual de Coke. ¿En qué puedo ayudarte hoy?
-            </div>
+          <div class="bubble">
+            ¡Hola! Soy el asistente virtual de Coke. ¿En qué puedo ayudarte hoy?
+          </div>
         </div>
       </div>
 
       <div class="input-area">
         <div class="input-wrapper">
-            <input id="userInput" type="text" placeholder="Escribe tu mensaje..." autocomplete="off" />
-            <button class="send-btn" onclick="sendMessage()">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </button>
+          <input id="userInput" type="text" placeholder="Escribe tu mensaje..." autocomplete="off" />
+          <button class="send-btn" onclick="sendMessage()">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
         </div>
       </div>
     </main>
@@ -63,4 +82,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
