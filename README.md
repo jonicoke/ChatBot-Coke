@@ -1,5 +1,5 @@
 # 🤖 Chatbot Personal 
-> **Link al Demo:** [Hacé clic acá para probarlo en vivo](https://chatbot-x4xe.onrender.com/)# 📌 Descripción
+> **Link al Demo:** [Hacé clic acá para probarlo en vivo](https://chatbot-x4xe.onrender.com/)
 
 Este proyecto consiste en la creación de un chatbot personal desarrollado con Node.js, JavaScript y MongoDB Atlas, diseñado para interactuar con los usuarios y responder preguntas relacionadas con mi perfil profesional.
 
